@@ -1,3 +1,7 @@
+provider "aws" {
+  region = "us-east-2"
+}
+  
 resource "aws_instance" "kubernetes_Servers" {
   count                  = 1
   ami                    = var.kubernetes_ami
