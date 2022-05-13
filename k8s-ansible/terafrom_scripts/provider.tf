@@ -7,24 +7,3 @@ terraform {
       version = "~> 3.0"
     }
   }
-
-# Adding Backend as S3 for Remote State Storage with State Locking
-  backend "s3" {
-    bucket = "terraform-eks-bucket1"
-    key    = "prod/terraform.tfstate"
-    region = "us-east-2"
-    # For State Locking
-    dynamodb_table = "terraform-lock"
-  }
-}
-
-resource "aws_dynamodb_table" "tf_lock" {
-  name = "terraform-lock"
-  hash_key = "LockID"
-  read_capacity = 3
-  write_capacity = 3
-  attribute {
-     name = "LockID"
-     type = "S"
-   }
- }
