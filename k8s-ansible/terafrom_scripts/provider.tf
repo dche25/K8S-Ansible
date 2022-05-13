@@ -27,7 +27,4 @@ resource "aws_dynamodb_table" "tf_lock" {
      name = "LockID"
      type = "S"
    }
-  tags  {
-    Name = "Terraform Lock Table"
-   }
  }
