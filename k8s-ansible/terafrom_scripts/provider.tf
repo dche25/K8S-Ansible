@@ -8,10 +8,6 @@ terraform {
     }
   }
 
-provider "aws" {
-  region = "us-east-2"
-}
-  
 # Adding Backend as S3 for Remote State Storage with State Locking
   backend "s3" {
     bucket = "terraform-eks-bucket1"
