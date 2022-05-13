@@ -18,7 +18,7 @@ terraform {
   }
 }
 
-resource "aws_dynamodb_table" “tf_lock" {
+resource "aws_dynamodb_table" "tf_lock" {
   name = "terraform-lock"
   hash_key = "LockID"
   read_capacity = 3
