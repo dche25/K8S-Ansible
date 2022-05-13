@@ -14,9 +14,9 @@ provider "aws" {
   
 # Adding Backend as S3 for Remote State Storage with State Locking
   backend "s3" {
-    bucket = "terraform-mylandmark"
+    bucket = "terraform-eks-bucket1"
     key    = "prod/terraform.tfstate"
-    region = "us-west-2"
+    region = "us-east-2"
     # For State Locking
     dynamodb_table = "terraform-lock"
   }
